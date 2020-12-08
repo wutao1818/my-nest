@@ -1,4 +1,10 @@
-import { Body, Controller, Get, Post, Query } from '@nestjs/common';
+import { 
+  Body, 
+  Controller, 
+  Get, 
+  Post, 
+  Query
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { ApiTags } from '@nestjs/swagger';
 

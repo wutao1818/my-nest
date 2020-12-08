@@ -11,7 +11,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.use(Logger);
-  app.setGlobalPrefix('base'); // 全局路由前缀，类似于某个具体的服务名
+  // app.setGlobalPrefix('base'); // 全局路由前缀
 
   const options = new DocumentBuilder()
     .setTitle('heros example')
