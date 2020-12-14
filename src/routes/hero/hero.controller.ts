@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post, Patch, Delete, Query, Param, UsePipes } fr
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { HeroService } from './hero.service';
 import { ValidationPipe } from '../../pipe/validation.pipe';
-import { HeroInfoDto, HeroCodeDto, HeroNameDto, PageSizeDto, QueryDto } from './hero.dto'; // 引入 DTO
+import { HeroInfoDto, HeroCodeDto, HeroNameDto, PageSizeDto, QueryDto } from './dto/hero.dto'; // 引入 DTO
 
 const validationPipe = new ValidationPipe();
 

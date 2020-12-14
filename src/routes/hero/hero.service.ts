@@ -1,6 +1,7 @@
+import { Model } from 'mongoose';
 import { Injectable } from '@nestjs/common';
 import { responseFunc, sqlPromise } from '../../utils';
-import { ResponseDto } from './hero.interfaces';
+import { ResponseDto } from './interfaces/index';
 import { TABLE_HERO_USER } from '../../configs/tables';
 
 
