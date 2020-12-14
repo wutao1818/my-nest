@@ -14,14 +14,14 @@ import { ApiTags } from '@nestjs/swagger';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Get('getUserInfo')
-  getUserInfo() {
-    return this.userService.getUserInfo();
+  @Get('heroInfo')
+  async heroInfo() {
+    return this.userService.heroInfo();
   }
 
-  @Post('getHeroList')
-  getHeroList(@Body() body: { pageNo: number, pageSize: number }) {
+  @Post('heroList')
+  async heroList(@Body() body: { pageNo: number, pageSize: number }) {
     const { pageNo, pageSize } = body;
-    return this.userService.getHeroList({ pageNo, pageSize });
+    return this.userService.heroList({ pageNo, pageSize });
   }
 }

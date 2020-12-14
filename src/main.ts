@@ -33,7 +33,7 @@ async function bootstrap() {
           app: '3001-Node-Server',
           hostName: '10.177.11.128:3001',
           ipAddr: '10.177.11.128',
-          statusPageUrl: 'http://10.177.11.128:3001/base/#/',
+          statusPageUrl: 'http://10.177.11.128:3001/base/?docExpansion=none',
           port: {'$': 3001, '@enabled': 'true',},
           vipAddress: 'test.something.com',
           dataCenterInfo: {'@class': 'com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo', name: 'MyOwn',},

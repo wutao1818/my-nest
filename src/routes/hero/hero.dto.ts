@@ -9,8 +9,23 @@ export class HeroCodeDto {
     description: '英雄编号',
     default: '101',
   })
-  readonly heroCode: string;
+  readonly id: string;
 }
+
+export class HeroInfoDto {
+  @ApiProperty({
+    description: '英雄名字',
+    default: '韩信',
+  })
+  readonly heroName: string;
+
+  @ApiProperty({
+    description: '英雄职业',
+    default: '刺客',
+  })
+  readonly heroJob: string;
+}
+
 
 
 export class PageSizeDto {
@@ -28,25 +43,14 @@ export class PageSizeDto {
 
 }
 
-
-export class HeroInfoDto {
-  @IsNotEmpty({ message: 'heroCode 不能为空' })
+export class QueryDto {
+  @IsNotEmpty({ message: 'jobType 不能为空' })
   @ApiProperty({
     required: true,
-    description: '英雄编号',
-    default: '101',
+    description: '职业类型',
+    default: '0',
   })
-  readonly heroCode: string | number;
-
-  @ApiProperty({
-    description: '英雄名字',
-    default: '韩信',
-  })
-  readonly heroName: string;
-
-  @ApiProperty({
-    description: '英雄职业',
-    default: '刺客',
-  })
-  readonly heroJob: string;
+  readonly jobType: string;
 }
+
+

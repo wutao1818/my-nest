@@ -1,0 +1,1 @@
+export const TABLE_HERO_USER = `hero_user`;

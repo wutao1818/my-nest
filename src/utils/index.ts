@@ -4,9 +4,11 @@ import connection from '../configs/mysql';
 export const sqlPromise = ( sql: string ) => {
   return new Promise(( resolve, reject ) => {
     connection.query(sql, (error: object, results: any, fields: any) => {
+      console.log(`error : `,error);
       if (error) {
         reject(error);
-        throw error;
+        return responseFunc(500, null, `service error: ${error}`);
+        // throw error;
       }else{
         resolve(results);
       }
