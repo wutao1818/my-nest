@@ -3,6 +3,15 @@ import { ApiProperty } from '@nestjs/swagger';
 
 
 
+export class HeroNameDto {
+  @IsNotEmpty({ message: 'heroName不能为空' })
+  @ApiProperty({
+    description: '英雄名字',
+    default: '',
+  })
+  readonly heroName: string;
+}
+
 export class HeroCodeDto {
   @IsNotEmpty({ message: 'heroCode不能为空' })
   @ApiProperty({

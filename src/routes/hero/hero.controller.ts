@@ -2,13 +2,13 @@ import { Body, Controller, Get, Post, Patch, Delete, Query, Param, UsePipes } fr
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { HeroService } from './hero.service';
 import { ValidationPipe } from '../../pipe/validation.pipe';
-import { HeroInfoDto, HeroCodeDto, PageSizeDto, QueryDto } from './hero.dto'; // 引入 DTO
+import { HeroInfoDto, HeroCodeDto, HeroNameDto, PageSizeDto, QueryDto } from './hero.dto'; // 引入 DTO
 
 const validationPipe = new ValidationPipe();
 
 
 // 局部路由前缀
-@ApiTags('hero 人物相关接口')
+@ApiTags('heros 王者荣耀英雄相关接口')
 @Controller('hero')
 export class HeroController {
   constructor(private readonly heroService: HeroService) {}
@@ -18,6 +18,13 @@ export class HeroController {
   @ApiOperation({ summary: '根据heroCode查询人物' })
   getHero(@Param() param: HeroCodeDto) {
     return this.heroService.getHero(param.id);
+  }
+
+
+  @Get('info')
+  @ApiOperation({ summary: '根据输入的姓名查询英雄' })
+  queryHeroByName(@Query() query: HeroNameDto) {
+    return this.heroService.queryHeroByName(query.heroName);
   }
 
 

@@ -24,7 +24,7 @@ import {
 
 
 
-@ApiTags('todos')
+@ApiTags('todos-demo')
 @Controller('todos')
 export class TodosController {
     constructor(private readonly todosService: TodosService) {}
@@ -63,7 +63,7 @@ export class TodosController {
 }
 
 
-@ApiTags('excep')
+@ApiTags('exception-demo')
 @Controller('excep')
 export class ExceptionController {
     constructor() {}

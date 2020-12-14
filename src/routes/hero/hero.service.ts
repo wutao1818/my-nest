@@ -20,6 +20,25 @@ export class HeroService {
 
 
   /**
+   * @description: 根据输入的姓名查询英雄
+   * @param {*} heroName
+   */
+  async queryHeroByName( heroName ): Promise<ResponseDto> {
+    const val = heroName.trim();
+    const data = await sqlPromise(`SELECT * FROM ${TABLE_HERO_USER}`);
+    const heroList = JSON.parse(JSON.stringify(data)); // 获取英雄列表
+    const arr = heroList.filter(item => {
+      if(item.hero_name.includes(val)){
+        return item;
+      }
+    });
+
+    return responseFunc(200, arr, 'success');
+  }
+
+
+
+  /**
    * @description: 查询所有人物列表
    * @param {*} pageNo
    * @param {*} pageSize
